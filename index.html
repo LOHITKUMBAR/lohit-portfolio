@@ -15,19 +15,33 @@
       background: #0f172a;
       overflow-x: hidden;
     }
-    /* Animated gear-like background using SVG + rotation */
+    /* Gear-like SVG background */
     body::before {
       content: "";
       position: fixed;
-      top: -200px;
-      left: -200px;
-      width: 600px;
-      height: 600px;
-      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 30%, transparent 31%),
-                  radial-gradient(circle at center, transparent 29%, rgba(255,255,255,0.03) 30%),
-                  radial-gradient(circle at center, rgba(255,255,255,0.05) 2%, transparent 3%);
-      border-radius: 50%;
-      animation: rotateGear 60s linear infinite;
+      top: -150px;
+      left: -150px;
+      width: 700px;
+      height: 700px;
+      background: url('data:image/svg+xml;utf8,
+        <svg xmlns="http://www.w3.org/2000/svg" width="700" height="700" viewBox="0 0 200 200">
+          <g fill="rgba(255,255,255,0.05)">
+            <circle cx="100" cy="100" r="80" stroke="none"/>
+            <!-- gear teeth -->
+            <g>
+              <rect x="98" y="10" width="4" height="20"/>
+              <rect x="98" y="170" width="4" height="20"/>
+              <rect x="170" y="98" width="20" height="4"/>
+              <rect x="10" y="98" width="20" height="4"/>
+              <rect x="155" y="45" width="20" height="4" transform="rotate(45 165 47)"/>
+              <rect x="25" y="45" width="20" height="4" transform="rotate(-45 35 47)"/>
+              <rect x="155" y="145" width="20" height="4" transform="rotate(-45 165 147)"/>
+              <rect x="25" y="145" width="20" height="4" transform="rotate(45 35 147)"/>
+            </g>
+          </g>
+        </svg>') no-repeat center;
+      background-size: contain;
+      animation: rotateGear 120s linear infinite;
       z-index: 0;
     }
     @keyframes rotateGear {
@@ -80,19 +94,11 @@
     </a>
   </section>
 
-  <!-- EDUCATION -->
-  <section class="max-w-6xl mx-auto py-16 px-6" data-aos="fade-right" data-aos-duration="600">
-    <h3 class="text-2xl font-bold text-teal-400 mb-6">🎓 Education</h3>
-    <ul class="space-y-4 text-gray-300">
-      <li><strong>Bachelor of Engineering in Mechanical Engineering</strong> – Padre Conceição College of Engineering, Goa (2021–2024)</li>
-      <li><strong>Diploma in Mechanical Engineering</strong> – Institute of Shipbuilding Technology, Bogda (2018–2021)</li>
-    </ul>
-  </section>
-
   <!-- EXPERIENCE -->
   <section id="experience" class="max-w-6xl mx-auto py-16 px-6 bg-gray-800 rounded-2xl shadow-lg" 
            data-aos="fade-left" data-aos-duration="600">
     <h3 class="text-2xl font-bold text-teal-400 mb-6">🏢 Experience</h3>
+    <!-- same as before -->
     <div class="space-y-8">
       <div>
         <h4 class="font-semibold text-lg">Junior Prototype Engineer – Drishti Works Pvt Ltd</h4>
@@ -134,19 +140,44 @@
     <div class="space-y-4">
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Smart Helmet – IoT Crash Alert</summary>
-        <p class="mt-2 text-gray-400">Developed a smart helmet equipped with Arduino, GSM, and GPS modules to detect crashes and automatically send location-based alerts to emergency contacts.</p>
+        <p class="mt-2 text-gray-400">
+          Developed a safety-oriented smart helmet integrating Arduino, GSM, and GPS modules. 
+          The helmet detects crashes using impact sensors and automatically sends live GPS coordinates 
+          via GSM to predefined emergency contacts, ensuring rapid assistance.
+        </p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Filament from PET Bottles</summary>
-        <p class="mt-2 text-gray-400">Engineered a recycling system converting PET bottles into 3D printer filament using extrusion, reducing waste and enabling cost-effective additive manufacturing.</p>
+        <p class="mt-2 text-gray-400">
+          Designed a sustainable recycling solution that converts PET bottles into 3D printer filament. 
+          Developed a custom extrusion system to melt and extrude PET into uniform filaments suitable 
+          for 3D printing, reducing plastic waste and promoting circular economy practices.
+        </p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <summary class="cursor-pointer font-semibold">3D Printing Filament Manufacturing Unit using PET Bottles</summary>
+        <p class="mt-2 text-gray-400">
+          Built a small-scale 3D printing filament manufacturing unit using recycled PET bottles. 
+          The project included shredding PET bottles, drying raw material, and extruding it into 
+          high-quality filament rolls. The unit addressed sustainability challenges while making 
+          additive manufacturing more affordable for educational and prototyping purposes.
+        </p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Geneva Mechanism Conveyor</summary>
-        <p class="mt-2 text-gray-400">Built a conveyor system with precise intermittent motion using a Geneva wheel mechanism, improving automated handling processes.</p>
+        <p class="mt-2 text-gray-400">
+          Developed a conveyor system with precise intermittent movement using the Geneva mechanism. 
+          The design demonstrated accuracy and efficiency in automated production processes where 
+          timed intervals are crucial.
+        </p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Dust Pollution Control in Quarry</summary>
-        <p class="mt-2 text-gray-400">Designed a quarry dust control system using wetting agents and sprinklers, reducing dust particles and enhancing worker safety.</p>
+        <p class="mt-2 text-gray-400">
+          Implemented a dust suppression system for quarry operations using wetting agents and 
+          automated sprinklers. Reduced airborne particles to improve worker safety, operational 
+          visibility, and environmental compliance.
+        </p>
       </details>
     </div>
   </section>
@@ -227,8 +258,7 @@
       </div>
       <div class="relative group">
         <img src="cert_lsswb.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
-        <!-- Download only if available -->
-        <a href="cert_lsswb.pdf" download onerror="this.style.display='none';" class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <a href="cert_lsswb.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">Lean Six Sigma White Belt – LinkedIn Learning</p>
       </div>
     </div>
