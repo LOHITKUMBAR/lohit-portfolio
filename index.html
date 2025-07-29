@@ -9,13 +9,35 @@
   <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
   <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
-    .bg-gradient-dark { background: linear-gradient(to right, #0f172a, #1e293b); }
-    .modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.9); }
-    .modal img { max-width:90vw; max-height:90vh; margin:auto; display:block; border-radius:0.5rem; }
+    body { 
+      font-family: 'Inter', sans-serif; 
+      scroll-behavior: smooth; 
+      background: #0f172a;
+      overflow-x: hidden;
+    }
+    /* Animated gear-like background using SVG + rotation */
+    body::before {
+      content: "";
+      position: fixed;
+      top: -200px;
+      left: -200px;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle at center, rgba(255,255,255,0.05) 30%, transparent 31%),
+                  radial-gradient(circle at center, transparent 29%, rgba(255,255,255,0.03) 30%),
+                  radial-gradient(circle at center, rgba(255,255,255,0.05) 2%, transparent 3%);
+      border-radius: 50%;
+      animation: rotateGear 60s linear infinite;
+      z-index: 0;
+    }
+    @keyframes rotateGear {
+      from { transform: rotate(0deg); }
+      to { transform: rotate(360deg); }
+    }
+    section, header, footer { position: relative; z-index: 1; }
   </style>
 </head>
-<body class="bg-gradient-dark text-gray-200">
+<body class="text-gray-200">
 
   <!-- NAVBAR -->
   <header class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 shadow-md backdrop-blur">
@@ -112,35 +134,19 @@
     <div class="space-y-4">
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Smart Helmet – IoT Crash Alert</summary>
-        <p class="mt-2 text-gray-400">
-          Developed a safety-oriented smart helmet equipped with Arduino, GSM, and GPS modules. 
-          The system detects crashes through an impact sensor and automatically sends location-based 
-          alerts to emergency contacts, ensuring rapid response and reducing risk in road accidents.
-        </p>
+        <p class="mt-2 text-gray-400">Developed a smart helmet equipped with Arduino, GSM, and GPS modules to detect crashes and automatically send location-based alerts to emergency contacts.</p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Filament from PET Bottles</summary>
-        <p class="mt-2 text-gray-400">
-          Engineered a recycling system to convert PET plastic bottles into usable 3D printer filament. 
-          Designed and assembled an extrusion mechanism that reduces plastic waste and provides 
-          cost-effective filament for additive manufacturing.
-        </p>
+        <p class="mt-2 text-gray-400">Engineered a recycling system converting PET bottles into 3D printer filament using extrusion, reducing waste and enabling cost-effective additive manufacturing.</p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Geneva Mechanism Conveyor</summary>
-        <p class="mt-2 text-gray-400">
-          Constructed a conveyor system using the Geneva mechanism to achieve precise intermittent motion. 
-          Ideal for automated manufacturing processes, the project demonstrated efficient mechanical 
-          timing and synchronized material handling.
-        </p>
+        <p class="mt-2 text-gray-400">Built a conveyor system with precise intermittent motion using a Geneva wheel mechanism, improving automated handling processes.</p>
       </details>
       <details class="bg-gray-800 p-4 rounded-lg shadow-md">
         <summary class="cursor-pointer font-semibold">Dust Pollution Control in Quarry</summary>
-        <p class="mt-2 text-gray-400">
-          Designed and implemented a dust control system for quarry sites. Incorporated wetting agents 
-          and automated sprinkler systems to minimize airborne dust particles, improving worker safety 
-          and environmental compliance.
-        </p>
+        <p class="mt-2 text-gray-400">Designed a quarry dust control system using wetting agents and sprinklers, reducing dust particles and enhancing worker safety.</p>
       </details>
     </div>
   </section>
@@ -190,47 +196,43 @@
     <h3 class="text-2xl font-bold text-teal-400 mb-6">📜 Certifications</h3>
     <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
       <div class="relative group">
-        <img src="cert_matlab.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_matlab.jpg')">
+        <img src="cert_matlab.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_matlab.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">MATLAB – Coursera</p>
       </div>
       <div class="relative group">
-        <img src="cert_solidworks.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_solidworks.jpg')">
+        <img src="cert_solidworks.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_solidworks.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">SolidWorks – LinkedIn Learning</p>
       </div>
       <div class="relative group">
-        <img src="cert_publicspeaking.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_publicspeaking.jpg')">
+        <img src="cert_publicspeaking.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_publicspeaking.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">Public Speaking – NPTEL</p>
       </div>
       <div class="relative group">
-        <img src="cert_ebusiness.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_ebusiness.jpg')">
+        <img src="cert_ebusiness.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_ebusiness.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">E‑Business – NPTEL</p>
       </div>
       <div class="relative group">
-        <img src="cert_organizational.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_organizational.jpg')">
+        <img src="cert_organizational.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_organizational.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">Organizational Behaviour – NPTEL</p>
       </div>
       <div class="relative group">
-        <img src="cert_fusion360.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_fusion360.jpg')">
+        <img src="cert_fusion360.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
         <a href="cert_fusion360.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">Fusion 360 – LinkedIn Learning</p>
       </div>
       <div class="relative group">
-        <img src="cert_lsswb.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_lsswb.jpg')">
-        <a href="cert_lsswb.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <img src="cert_lsswb.jpg" class="rounded-lg shadow-lg hover:scale-105 transition">
+        <!-- Download only if available -->
+        <a href="cert_lsswb.pdf" download onerror="this.style.display='none';" class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
         <p class="mt-2 text-center text-gray-300">Lean Six Sigma White Belt – LinkedIn Learning</p>
       </div>
     </div>
   </section>
-
-  <!-- MODAL (only for cert jpgs) -->
-  <div id="modal" class="modal flex justify-center items-center" onclick="closeModal()">
-    <img id="modal-img" src="" alt="Certificate Preview">
-  </div>
 
   <!-- CONTACT -->
   <section id="contact" class="max-w-6xl mx-auto py-16 px-6 bg-gray-800 rounded-2xl shadow-lg text-center" 
@@ -249,14 +251,6 @@
     document.getElementById("menuBtn").addEventListener("click", () => {
       document.getElementById("menu").classList.toggle("hidden");
     });
-    function openModal(src){ 
-      document.getElementById("modal-img").src = src; 
-      document.getElementById("modal").style.display = "flex"; 
-    }
-    function closeModal(){ 
-      document.getElementById("modal").style.display = "none"; 
-    }
   </script>
 </body>
-  </html>
-  
+</html>
