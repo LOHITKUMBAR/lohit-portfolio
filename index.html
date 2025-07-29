@@ -1,223 +1,202 @@
 <!DOCTYPE html>
-<html lang="en" class="dark">
+<html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="author" content="Lohit Kumbar">
-  <meta name="description" content="Lohit Kumbar - Mechanical Engineer Portfolio">
-  <meta name="keywords" content="Lohit Kumbar, Mechanical Engineer, CAD, Prototyping, Portfolio">
-  <meta property="og:title" content="Lohit Kumbar Portfolio">
-  <meta property="og:description" content="Explore Lohit's work in R&D, CAD, Prototyping, and Mechanical Design">
-  <meta property="og:type" content="website">
-  <link rel="shortcut icon" href="favicon.ico" type="image/x-icon">
-  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.css">
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700&display=swap" rel="stylesheet">
+  <title>Lohit Kumbar | Mechanical Engineer Portfolio</title>
   <script src="https://cdn.tailwindcss.com"></script>
-  <script>
-    tailwind.config = {
-      darkMode: 'class',
-      theme: {
-        extend: {
-          fontFamily: { inter: ['Inter', 'sans-serif'] },
-          fontSize: { base: '17px' },
-          colors: {
-            royal: '#4169E1',
-            metallic: '#6E7F80'
-          },
-          animation: {
-            spinSlow: 'spin 20s linear infinite'
-          }
-        }
-      }
-    }
-  </script>
-  <title>Lohit Kumbar | Mechanical Engineer</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
   <style>
-    html {
-      scroll-behavior: smooth;
-    }
-    section {
-      scroll-margin-top: 70px;
-    }
-    .gear-bg {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
-      z-index: 0;
-      overflow: hidden;
-      pointer-events: none;
-    }
-    .gear-bg svg {
-      position: absolute;
-      fill: rgba(255,255,255,0.05);
-    }
-    .logo-icon {
-      width: 32px;
-      height: 32px;
-      margin-right: 8px;
-    }
+    body { font-family: 'Inter', sans-serif; scroll-behavior: smooth; }
+    .bg-gradient-dark { background: linear-gradient(to right, #0f172a, #1e293b); }
+    .modal { display:none; position:fixed; inset:0; z-index:9999; background:rgba(0,0,0,0.9); }
+    .modal img { max-width:90vw; max-height:90vh; margin:auto; display:block; border-radius:0.5rem; }
   </style>
 </head>
-<body class="bg-gradient-to-b from-gray-900 via-gray-800 to-gray-900 text-white font-inter text-base">
+<body class="bg-gradient-dark text-gray-200">
 
-  <!-- Rotating Gears Background -->
-  <div class="gear-bg">
-    <svg class="animate-spinSlow w-40 h-40 top-10 left-10" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="40" stroke-width="10" stroke="currentColor" fill="none" />
-    </svg>
-    <svg class="animate-spinSlow w-32 h-32 bottom-10 right-10" viewBox="0 0 100 100">
-      <circle cx="50" cy="50" r="30" stroke-width="8" stroke="currentColor" fill="none" />
-    </svg>
+  <!-- NAVBAR -->
+  <header class="fixed w-full top-0 z-50 bg-gray-900 bg-opacity-95 shadow-md backdrop-blur">
+    <div class="max-w-6xl mx-auto flex items-center justify-between p-4">
+      <h1 class="text-xl font-bold text-teal-400">Lohit Kumbar</h1>
+      <button id="menuBtn" class="md:hidden text-3xl">☰</button>
+      <nav id="menu" class="hidden md:flex space-x-6 font-semibold transition-all duration-300">
+        <a href="#about" class="hover:text-teal-400">About</a>
+        <a href="#experience" class="hover:text-teal-400">Experience</a>
+        <a href="#projects" class="hover:text-teal-400">Projects</a>
+        <a href="#skills" class="hover:text-teal-400">Skills</a>
+        <a href="#certifications" class="hover:text-teal-400">Certifications</a>
+        <a href="#contact" class="hover:text-teal-400">Contact</a>
+      </nav>
+    </div>
+  </header>
+
+  <!-- HERO -->
+  <section id="about" class="pt-32 pb-20 text-center">
+    <img src="dp_lohit.jpg" alt="Lohit Kumbar" 
+         class="w-40 h-40 mx-auto rounded-full shadow-xl mb-6 border-4 border-teal-500" 
+         data-aos="zoom-in" data-aos-duration="600">
+    <h2 class="text-3xl font-bold mb-2" data-aos="fade-up" data-aos-duration="600">Lohit Kumbar</h2>
+    <p class="text-lg text-gray-400 mb-4" data-aos="fade-up" data-aos-duration="700">
+      Mechanical Engineer | R&D | CAD | Prototyping
+    </p>
+    <a href="Lohit_K_resume.pdf" download 
+       class="bg-teal-500 hover:bg-teal-600 px-6 py-2 rounded-lg font-semibold text-white transition-all duration-300 shadow-md" 
+       data-aos="fade-up" data-aos-duration="800">
+       ⬇ Download Resume
+    </a>
+  </section>
+
+  <!-- EDUCATION -->
+  <section class="max-w-6xl mx-auto py-16 px-6" data-aos="fade-right" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">🎓 Education</h3>
+    <ul class="space-y-4 text-gray-300">
+      <li><strong>Bachelor of Engineering in Mechanical Engineering</strong> – Padre Conceição College of Engineering, Goa (2021–2024)</li>
+      <li><strong>Diploma in Mechanical Engineering</strong> – Institute of Shipbuilding Technology, Bogda (2018–2021)</li>
+    </ul>
+  </section>
+
+  <!-- EXPERIENCE -->
+  <section id="experience" class="max-w-6xl mx-auto py-16 px-6 bg-gray-800 rounded-2xl shadow-lg" 
+           data-aos="fade-left" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">🏢 Experience</h3>
+    <div class="space-y-8">
+      <div>
+        <h4 class="font-semibold text-lg">Junior Prototype Engineer – Drishti Works Pvt Ltd</h4>
+        <p class="text-sm text-gray-400">Oct 2024 – Present | Goa</p>
+        <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+          <li>Worked on real‑world EV conversion projects.</li>
+          <li>Proficient in Fusion 360 & SolidWorks for fixture and mount design.</li>
+          <li>Experience in fabrication, assembly processes, and quality control.</li>
+          <li>Handled BOM creation, procurement workflows, and vendor coordination.</li>
+          <li>Supervised fabrication teams ensuring quality output.</li>
+          <li>Performed root‑cause analysis and documented project processes.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-lg">Prototype Intern – Drishti Works Pvt Ltd</h4>
+        <p class="text-sm text-gray-400">Jul – Oct 2024 | Goa</p>
+        <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+          <li>Designed mounts & components for robotics applications.</li>
+          <li>Hands‑on experience in machining, fabrication, and assembly.</li>
+          <li>Created technical drawings & 2D drafting for manufacturing.</li>
+          <li>Maintained and calibrated BLDC motors and related systems.</li>
+        </ul>
+      </div>
+      <div>
+        <h4 class="font-semibold text-lg">Mechanical Maintenance Intern – Paradeep Phosphates Ltd</h4>
+        <p class="text-sm text-gray-400">Aug – Sep 2023 | Zuarinagar</p>
+        <ul class="list-disc list-inside text-gray-400 mt-2 space-y-1">
+          <li>Observed maintenance of pumps, gearboxes, turbines, and heat exchangers.</li>
+          <li>Learned preventive maintenance protocols and alignment techniques.</li>
+          <li>Developed knowledge of safety practices in chemical plant operations.</li>
+        </ul>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="max-w-6xl mx-auto py-16 px-6" data-aos="fade-up" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">🛠️ Projects</h3>
+    <div class="space-y-4">
+      <details class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <summary class="cursor-pointer font-semibold">Smart Helmet – IoT Crash Alert</summary>
+        <p class="mt-2 text-gray-400">Arduino helmet that detects crash and sends GSM + GPS alerts.</p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <summary class="cursor-pointer font-semibold">Filament from PET Bottles</summary>
+        <p class="mt-2 text-gray-400">Recycled PET bottles into 3D printer filament using extrusion.</p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <summary class="cursor-pointer font-semibold">Geneva Mechanism Conveyor</summary>
+        <p class="mt-2 text-gray-400">Built conveyor with precise intermittent motion using Geneva wheel.</p>
+      </details>
+      <details class="bg-gray-800 p-4 rounded-lg shadow-md">
+        <summary class="cursor-pointer font-semibold">Dust Pollution Control in Quarry</summary>
+        <p class="mt-2 text-gray-400">Wetting agents + sprinkler system to reduce dust particles.</p>
+      </details>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="max-w-6xl mx-auto py-16 px-6 bg-gray-800 rounded-2xl shadow-lg" 
+           data-aos="fade-up" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">💼 Skills</h3>
+    <div class="grid md:grid-cols-3 gap-6">
+      <div><h4 class="font-semibold">🛠️ Technical</h4><p class="text-gray-400">SolidWorks, Fusion 360, AutoCAD, CATIA, BOM Creation, Cura, G‑code</p></div>
+      <div><h4 class="font-semibold">🤝 Soft Skills</h4><p class="text-gray-400">Leadership, Communication, Root Cause Analysis</p></div>
+      <div><h4 class="font-semibold">💻 Software & Docs</h4><p class="text-gray-400">Excel, Google Sheets/Slides, MS Word</p></div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS -->
+  <section id="certifications" class="max-w-6xl mx-auto py-16 px-6" data-aos="fade-right" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">📜 Certifications</h3>
+    <div class="grid sm:grid-cols-2 md:grid-cols-3 gap-6">
+      <div class="relative group">
+        <img src="cert_matlab.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_matlab.jpg')">
+        <a href="cert_matlab.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">MATLAB – Coursera</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_solidworks.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_solidworks.jpg')">
+        <a href="cert_solidworks.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">SolidWorks – LinkedIn Learning</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_publicspeaking.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_publicspeaking.jpg')">
+        <a href="cert_publicspeaking.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">Public Speaking – NPTEL</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_ebusiness.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_ebusiness.jpg')">
+        <a href="cert_ebusiness.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">E‑Business – NPTEL</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_organizational.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_organizational.jpg')">
+        <a href="cert_organizational.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">Organizational Behaviour – NPTEL</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_fusion360.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_fusion360.jpg')">
+        <a href="cert_fusion360.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">Fusion 360 – LinkedIn Learning</p>
+      </div>
+      <div class="relative group">
+        <img src="cert_lsswb.jpg" class="rounded-lg shadow-lg cursor-pointer hover:scale-105 transition" onclick="openModal('cert_lsswb.jpg')">
+        <a href="cert_lsswb.pdf" download class="absolute top-2 right-2 bg-teal-600 text-white px-2 py-1 text-xs rounded">⬇</a>
+        <p class="mt-2 text-center text-gray-300">Lean Six Sigma White Belt – LinkedIn Learning</p>
+      </div>
+    </div>
+  </section>
+
+  <!-- MODAL -->
+  <div id="modal" class="modal flex justify-center items-center" onclick="closeModal()">
+    <img id="modal-img" src="" alt="Certificate Preview">
   </div>
 
-  <!-- Hero Section -->
-  <section id="hero" class="relative pt-28 pb-20 text-center">
-    <img src="dp_lohit.jpg" alt="Lohit Kumbar" class="mx-auto rounded-full w-40 h-40 mb-6 shadow-xl z-10 relative" data-aos="zoom-in">
-    <h2 class="text-3xl font-bold z-10 relative" data-aos="fade-up">Lohit Kumbar</h2>
-    <p class="text-gray-300 mt-2 z-10 relative" data-aos="fade-up" data-aos-delay="100">R&D | CAD Design | Prototyping</p>
-    <a href="Lohit_K_resume.pdf" download class="mt-4 inline-block bg-royal px-6 py-2 rounded text-white z-10 relative" data-aos="fade-up" data-aos-delay="200">Download Resume</a>
+  <!-- CONTACT -->
+  <section id="contact" class="max-w-6xl mx-auto py-16 px-6 bg-gray-800 rounded-2xl shadow-lg text-center" 
+           data-aos="fade-up" data-aos-duration="600">
+    <h3 class="text-2xl font-bold text-teal-400 mb-6">📞 Contact</h3>
+    <p>Email: <a href="mailto:lohitkumbarofficial@gmail.com" class="text-teal-400">lohitkumbarofficial@gmail.com</a></p>
+    <p>Phone: <a href="tel:+918329131081" class="text-teal-400">+91 8329131081</a></p>
+    <p>Location: Sancoale, Goa, India</p>
+    <p>LinkedIn: <a href="https://linkedin.com/in/lohit-kumbar-854242239" target="_blank" class="text-teal-400">Profile</a></p>
   </section>
 
-  <!-- Sections inserted dynamically -->
-  <section id="experience" class="max-w-5xl mx-auto py-16 px-6 border-t border-gray-700">
-    <h3 class="text-2xl font-bold mb-8" data-aos="fade-up">Experience</h3>
-    <div class="space-y-6">
-      <div data-aos="fade-up">
-        <h4 class="text-xl font-semibold">Junior Prototype Engineer – Drishti Works Pvt Ltd</h4>
-        <p class="text-sm text-gray-400">Oct 2024 – Present | Goa</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2">
-          <li>Prototyped EV components and mechanical fixtures</li>
-          <li>Worked on CAD using Fusion 360, SolidWorks</li>
-          <li>Created BOM, coordinated with vendors, handled QC and calibration</li>
-          <li>Led fabrication team for EV mechanical assembly</li>
-        </ul>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-xl font-semibold">Prototype Intern – Drishti Works Pvt Ltd</h4>
-        <p class="text-sm text-gray-400">Jul – Oct 2024 | Goa</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2">
-          <li>Created 2D drawings and set up CNC jobs</li>
-          <li>Calibrated BLDC motors</li>
-          <li>Designed components for robotic systems</li>
-        </ul>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-xl font-semibold">Mechanical Maintenance Intern – Paradeep Phosphates Ltd.</h4>
-        <p class="text-sm text-gray-400">Aug – Sep 2023 | Zuarinagar</p>
-        <ul class="list-disc list-inside text-gray-300 mt-2">
-          <li>Observed maintenance of turbines, heat exchangers, pumps</li>
-          <li>Studied urea processing and packing procedures</li>
-          <li>Hands-off observation of risky operations as per safety protocol</li>
-        </ul>
-      </div>
-    </div>
-  </section>
+  <footer class="text-center py-6 text-gray-500 text-sm">© 2025 Lohit Kumbar. All Rights Reserved.</footer>
 
-  <section id="projects" class="max-w-5xl mx-auto py-16 px-6 border-t border-gray-700">
-    <h3 class="text-2xl font-bold mb-8" data-aos="fade-up">Projects</h3>
-    <div class="space-y-6">
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold">Smart Helmet – IoT Crash Alert System</h4>
-        <p class="text-gray-300">Designed an Arduino-based helmet that sends SMS alerts during accidents using a vibration sensor and GSM module.</p>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold">Filament from PET Bottles – Eco 3D Printing</h4>
-        <p class="text-gray-300">Developed a setup to convert waste PET into usable 3D printing filament. Enabled low-cost sustainable 3D printing.</p>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold">Geneva Mechanism Conveyor</h4>
-        <p class="text-gray-300">Fabricated an intermittent indexing conveyor using a 4-slot Geneva wheel to reduce component misplacement during transfer.</p>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold">Dust Pollution Control in Quarry</h4>
-        <p class="text-gray-300">Implemented a wetting agent-based dust suppression system for a stone crusher to reduce airborne particles effectively.</p>
-      </div>
-    </div>
-  </section>
-
-  <section id="skills" class="max-w-5xl mx-auto py-16 px-6 border-t border-gray-700">
-    <h3 class="text-2xl font-bold mb-8" data-aos="fade-up">Skills</h3>
-    <div class="grid md:grid-cols-2 gap-10">
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold mb-2">Technical Skills 🛠️</h4>
-        <ul class="list-disc list-inside text-gray-300">
-          <li>Fusion 360, SolidWorks, CATIA</li>
-          <li>AutoCAD, Cura, G-code</li>
-          <li>MS Word, Excel, Google Docs</li>
-          <li>BOMs, Manufacturing Docs</li>
-        </ul>
-      </div>
-      <div data-aos="fade-up">
-        <h4 class="text-lg font-semibold mb-2">Soft Skills 🤝</h4>
-        <ul class="list-disc list-inside text-gray-300">
-          <li>Leadership and Team Coordination</li>
-          <li>Root Cause Analysis</li>
-          <li>Critical Thinking</li>
-          <li>Communication & Documentation</li>
-        </ul>
-      </div>
-    </div>
-  </section>
-
-  <section id="certifications" class="max-w-5xl mx-auto py-20 px-6 border-t border-gray-300">
-    <h3 class="text-2xl font-semibold mb-8" data-aos="fade-up">Certifications</h3>
-    <div class="grid grid-cols-1 md:grid-cols-2 gap-6 text-gray-100">
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M12 0L15.09 8H24L17.45 12.9L20.54 21L12 16.2L3.46 21L6.55 12.9L0 8H8.91L12 0Z"/>
-          </svg>
-          <a href="https://www.coursera.org/account/accomplishments/certificate/TBPMPJLFS7HH" target="_blank" class="hover:underline">Intro to Programming with MATLAB – Coursera</a>
-        </div>
-      </div>
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-          SolidWorks Basics – GUVI / IITM Research Park
-        </div>
-      </div>
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <path d="M4 4h16v2H4V4zm0 7h16v2H4v-2zm0 7h16v2H4v-2z"/>
-          </svg>
-          Public Speaking – NPTEL
-        </div>
-      </div>
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-          E-Business – NPTEL
-        </div>
-      </div>
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-          Organizational Behaviour – NPTEL
-        </div>
-      </div>
-      <div data-aos="fade-up">
-        <div class="flex items-center mb-2">
-          <svg class="w-6 h-6 mr-2" viewBox="0 0 24 24" fill="currentColor">
-            <circle cx="12" cy="12" r="10" />
-          </svg>
-          Arduino + Entrepreneurship – FunMinds
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/aos/2.3.4/aos.js"></script>
   <script>
-    AOS.init();
+    AOS.init({ duration: 500, easing: 'ease-in-out' });
+    document.getElementById("menuBtn").addEventListener("click", () => {
+      document.getElementById("menu").classList.toggle("hidden");
+    });
+    function openModal(src){ document.getElementById("modal-img").src = src; document.getElementById("modal").style.display = "flex"; }
+    function closeModal(){ document.getElementById("modal").style.display = "none"; }
   </script>
 </body>
-</html
+</html>
