@@ -1,0 +1,85 @@
+
+---
+
+# 📌 Part 2: General Prompt Template
+
+Here’s a **prompt template** for anyone to create the same kind of portfolio with their own info.  
+I’ve replaced your personal details with generic placeholders.
+
+```text
+You are ChatGPT or Gemini with full support for web development, TailwindCSS, SVG, AOS.js, and modern animated design.
+
+Please build a modern, recruiter-friendly, premium portfolio website for a professional based on the following info:
+
+---
+
+## 👤 BASIC INFO
+- Name: [YOUR NAME]  
+- Location: [YOUR LOCATION]  
+- Email: [YOUR EMAIL]  
+- Phone: [YOUR PHONE]  
+- LinkedIn: [YOUR LINKEDIN URL]  
+
+---
+
+## 🎓 EDUCATION
+- [Your Degree & Field] – [College/University] ([Year Range])  
+- [Your Diploma/Certification] – [Institution] ([Year Range])  
+
+---
+
+## 🏢 EXPERIENCE
+- **[Job Title]** – [Company] ([Start Date] – [End Date]), [Location]  
+- **[Job Title]** – [Company] ([Start Date] – [End Date]), [Location]  
+- (Add as many as needed)
+
+---
+
+## 🛠️ PROJECTS (Expandable Sections)
+1. **[Project Title]**  
+   - [Detailed description of the project, technologies used, and outcomes]
+
+(Add more projects if needed)
+
+---
+
+## 💼 SKILLS (Grouped with Icons)
+### Technical Skills
+- [Skill 1], [Skill 2], [Skill 3]  
+
+### Soft Skills
+- [Skill 1], [Skill 2], [Skill 3]  
+
+### Software & Docs
+- [Skill 1], [Skill 2], [Skill 3]  
+
+---
+
+## 📜 CERTIFICATIONS
+1. [Certification Name] – [Platform/Institution]  
+   [Certificate Link if available]  
+2. [Certification Name] – [Platform/Institution]  
+   (Add as many as needed)
+
+---
+
+## 🧩 UI / FEATURES TO INCLUDE
+- TailwindCSS v3 dark-theme  
+- Subtle rotating **gear-like background** (pure CSS SVG)  
+- AOS.js scroll animations  
+- Fully responsive layout  
+- Mobile menu with hamburger icon  
+- Modern font (`Inter`) and hover transitions  
+- Resume download button  
+- Profile image: `dp_profile.jpg`  
+- Certification thumbnails with download links (`cert_name.jpg` + `.pdf`)  
+- Smooth scroll & easy UX  
+- Easy to deploy with GitHub Pages  
+
+---
+
+✅ OUTPUT REQUIREMENT:
+Provide a **complete `index.html` code** that can be pasted and deployed immediately.  
+Profile photo should be referenced as `dp_profile.jpg`.  
+Certifications must follow the format: `cert_name.jpg` + `cert_name.pdf`.  
+Ensure smooth animations, no lag, and professional readability.  
