@@ -227,7 +227,7 @@
     </div>
   </section>
 
-  <!-- MODAL -->
+  <!-- MODAL (only for certs) -->
   <div id="modal" class="modal flex justify-center items-center" onclick="closeModal()">
     <img id="modal-img" src="" alt="Certificate Preview">
   </div>
@@ -249,8 +249,13 @@
     document.getElementById("menuBtn").addEventListener("click", () => {
       document.getElementById("menu").classList.toggle("hidden");
     });
-    function openModal(src){ document.getElementById("modal-img").src = src; document.getElementById("modal").style.display = "flex"; }
-    function closeModal(){ document.getElementById("modal").style.display = "none"; }
+    function openModal(src){ 
+      document.getElementById("modal-img").src = src; 
+      document.getElementById("modal").style.display = "flex"; 
+    }
+    function closeModal(){ 
+      document.getElementById("modal").style.display = "none"; 
+    }
   </script>
 </body>
 </html>
